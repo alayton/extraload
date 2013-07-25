@@ -29,6 +29,8 @@ extraload.run(function() {
 });
 ```
 
+----------
+
 ### extraload.end(callback)
 Registers a callback to be fired when all synchronous and asynchronous processes are completed.
 
@@ -49,6 +51,8 @@ extraload.end(function() {
     console.log('Processing completed!');
 });
 ```
+
+----------
 
 ### extraload.csvStream(opts)
 Creates a new [csv-stream](./csv-stream.md) instance which immediately begins reading the file. As the file is read, a `data` event will be generated for each row of data.
@@ -78,6 +82,8 @@ extraload.csvStream({ file: 'data/example.csv' })
     });
 ```
 
+----------
+
 ### extraload.mysql(opts)
 Creates a new [mysql](./mysql.md) instance.
 
@@ -92,6 +98,19 @@ Creates a new [mysql](./mysql.md) instance.
 
 #### Returns
 A new [mysql](./mysql.md) instance
+
+#### Example
+```javascript
+var mysql = extraload.mysql({
+    host: '10.0.0.1',
+    user: 'foo',
+    password: 'bar',
+    database: 'foobar'
+});
+mysql.query('INSERT INTO foo SET ?', { id: 1, name: 'bar', value: 42 });
+```
+
+----------
 
 ### extraload.xmlStream(opts)
 Creates a new [xml-stream](./xml-stream.md) instance which immediately begins reading the file. As the file is read, a `data` event will be generated for each `target` node encountered.
@@ -122,6 +141,8 @@ extraload.xmlStream({ file: 'data/example.xml' })
         console.log('Finished reading XML file.');
     });
 ```
+
+----------
 
 ### extraload.xpath(opts)
 Creates a new [xpath](./xpath.md) instance and synchronously loads the given XML file.
