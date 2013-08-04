@@ -235,8 +235,8 @@ Nothing
 ```javascript
 mysql.prepareTable('example_table');
 var table = mysql.table('example_table');
-mysql.query('INSERT INTO ?? SET ? [table, { id: 42, name: 'example', foo: 'bar' }]);
-mysql.query('INSERT INTO ?? SET ? [table, { id: 43, name: 'example2', foo: 'foobar' }]);
+mysql.query('INSERT INTO ?? SET ?', [table, { id: 42, name: 'example', foo: 'bar' }]);
+mysql.query('INSERT INTO ?? SET ?', [table, { id: 43, name: 'example2', foo: 'foobar' }]);
 mysql.finishTable('example_table');
 ```
 
@@ -258,8 +258,8 @@ Nothing
 ```javascript
 mysql.prepareTable('example_table');
 var table = mysql.table('example_table');
-mysql.query('INSERT INTO ?? SET ? [table, { id: 42, name: 'example', foo: 'bar' }]);
-mysql.query('INSERT INTO ?? SET ? [table, { id: 43, name: 'example2', foo: 'foobar' }]);
+mysql.query('INSERT INTO ?? SET ?', [table, { id: 42, name: 'example', foo: 'bar' }]);
+mysql.query('INSERT INTO ?? SET ?', [table, { id: 43, name: 'example2', foo: 'foobar' }]);
 mysql.finishTable('example_table');
 ```
 
@@ -278,7 +278,7 @@ Nothing
 ```javascript
 mysql.prepareTable('example_table');
 var table = mysql.table('example_table');
-mysql.query('INSERT INTO ?? SET ? [table, { id: 42, name: 'example', foo: 'bar' }]);
-mysql.query('INSERT INTO ?? SET ? [table, { id: 43, name: 'example2', foo: 'foobar' }]);
+mysql.query('INSERT INTO ?? SET ?', [table, { id: 42, name: 'example', foo: 'bar' }]);
+mysql.query('INSERT INTO ?? SET ?', [table, { id: 43, name: 'example2', foo: 'foobar' }]);
 mysql.finishTable('example_table');
 ```
