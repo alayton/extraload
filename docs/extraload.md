@@ -13,8 +13,11 @@ This gives you an instance to work with. If called in multiple modules, the same
 
 ## Methods
 
-### extraload.run(callback)
-When called, it immediately calls the callback function. By wrapping your main processing in this function, extraload is able to identify when your synchronous processes are done. This is needed to make sure the [extraload.end](#extraloadendcallback) callback is called at the correct time.
+### extraload.run
+When called, it immediately calls the callback function. By wrapping your main processing in this function, extraload is able to identify when your synchronous processes are done. This is needed to make sure the [extraload.end](#extraloadend) callback is called at the correct time.
+
+#### Parameters
+ - `callback`: `function()`. A function containing the bulk of your script's logic.
 
 #### Returns
 Nothing
@@ -31,17 +34,17 @@ extraload.run(function() {
 
 ----------
 
-### extraload.end(callback)
+### extraload.end
 Registers a callback to be fired when all synchronous and asynchronous processes are completed.
 
 #### Parameters
- - `callback`: A function containing any final logic that should be called before exiting.
+ - `callback`: `function()`. A function containing any final logic that should be called before exiting.
 
 #### Returns
 Nothing
 
 #### Notes
- - [extraload.run](#extraloadruncallback) must be used for the `end` event to be fired.
+ - [extraload.run](#extraloadrun) must be used for the `end` event to be fired.
  - If any asynchronous code is run in the callback, there's no guarantee it will finish before the script exits.
  - Shorthand for `extraload.on('end', callback);`.
 
@@ -54,7 +57,7 @@ extraload.end(function() {
 
 ----------
 
-### extraload.csvStream(opts)
+### extraload.csvStream
 Creates a new [csv-stream](./csv-stream.md) instance which immediately begins reading the file. As the file is read, a `data` event will be generated for each row of data.
 
 #### Parameters
@@ -84,7 +87,7 @@ extraload.csvStream({ file: 'data/example.csv' })
 
 ----------
 
-### extraload.mysql(opts)
+### extraload.mysql
 Creates a new [mysql](./mysql.md) instance.
 
 #### Parameters
@@ -112,7 +115,7 @@ mysql.query('INSERT INTO foo SET ?', { id: 1, name: 'bar', value: 42 });
 
 ----------
 
-### extraload.xmlStream(opts)
+### extraload.xmlStream
 Creates a new [xml-stream](./xml-stream.md) instance which immediately begins reading the file. As the file is read, a `data` event will be generated for each `target` node encountered.
 
 #### Parameters
@@ -144,7 +147,7 @@ extraload.xmlStream({ file: 'data/example.xml' })
 
 ----------
 
-### extraload.xpath(opts)
+### extraload.xpath
 Creates a new [xpath](./xpath.md) instance and synchronously loads the given XML file.
 
 #### Parameters

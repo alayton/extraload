@@ -43,7 +43,7 @@ var ExtraloadMysql = function(opts) {
         this.query('START TRANSACTION');
         var self = this;
         connection.on('error', function(err) {
-            self.query('ROLLBACK');
+            self.rollback();
         });
     };
 
@@ -52,9 +52,14 @@ var ExtraloadMysql = function(opts) {
         Extraload._decrementTasks('mysql');
     };
 
+    this.rollback = function() {
+        this.query('ROLLBACK');
+        Extraload._decrementTasks('mysql');
+    };
+
     this.prepareTable = function(table) {
         Extraload._incrementTasks('mysql');
-        var newTable = Mysql.escapeId('_' + table);
+        var newTable = Mysql.escapeId(this.table(table));
         table = Mysql.escapeId(table);
 
         this.query('SET FOREIGN_KEY_CHECKS=0');
@@ -63,9 +68,13 @@ var ExtraloadMysql = function(opts) {
         this.query('TRUNCATE TABLE ' + newTable);
     };
 
+    this.table = function(table) {
+        return '_' + table;
+    };
+
     this.finishTable = function(table) {
         var backupTable = Mysql.escapeId('_' + table + '_backup');
-        var newTable = Mysql.escapeId('_' + table);
+        var newTable = Mysql.escapeId(this.table(table));
         table = Mysql.escapeId(table);
 
         this.query('SET FOREIGN_KEY_CHECKS=0');
