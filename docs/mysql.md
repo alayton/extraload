@@ -140,9 +140,9 @@ A string containing the escaped value
 
 #### Example
 ```javascript
-mysql.query('UPDATE example_table SET name = ' + mysql.escape('new example name') + ' WHERE id = 42);
+mysql.query('UPDATE example_table SET name = ' + mysql.escape('new example name') + ' WHERE id = 42');
 // vs
-mysql.query('UPDATE example_table SET name = ? WHERE id = 42, ['new example name']);
+mysql.query('UPDATE example_table SET name = ? WHERE id = 42', ['new example name']);
 ```
 
 ----------
