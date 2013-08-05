@@ -1,27 +1,27 @@
 {
-    "author": "Alayton Norgard <an.adept@gmail.com> (https://github.com/alayton)",
-    "name": "extraload",
-    "description": "An ETL framework for node.js.",
-    "version": "0.1.0",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/alayton/extraload"
-    },
-    "keywords": [
-        "etl",
-        "framework",
-        "api"
-    ],
-    "main": "./index.js",
-    "directories": {
-        "doc": "./docs",
-        "lib": "./lib"
-    },
-    "engines": {
-        "node": ">=0.10"
-    },
-    "license": "MIT",
-    "dependencies": {},
-    "devDependencies": {},
-    "optionalDependencies": {}
+  "author": "Alayton Norgard <an.adept@gmail.com> (https://github.com/alayton)",
+  "name": "extraload",
+  "description": "An ETL framework for node.js.",
+  "version": "0.1.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alayton/extraload"
+  },
+  "keywords": [
+    "etl",
+    "framework",
+    "api"
+  ],
+  "main": "./index.js",
+  "directories": {
+    "doc": "./docs",
+    "lib": "./lib"
+  },
+  "engines": {
+    "node": ">=0.10"
+  },
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {},
+  "optionalDependencies": {}
 }
