@@ -35,22 +35,22 @@ var Extraload = function() {
     };
 
     this.mysql = function(opts) {
-        var constructor = require('./modules/mysql.js');
+        var constructor = require('./lib/mysql.js');
         return new constructor(opts);
     };
 
     this.xpath = function(opts) {
-        var constructor = require('./modules/xpath.js');
+        var constructor = require('./lib/xpath.js');
         return new constructor(opts);
     };
 
     this.xmlStream = function(opts) {
-        var constructor = require('./modules/xml-stream.js');
+        var constructor = require('./lib/xml-stream.js');
         return new constructor(opts);
     };
 
     this.csvStream = function(opts) {
-        var constructor = require('./modules/csv-stream.js');
+        var constructor = require('./lib/csv-stream.js');
         return new constructor(opts);
     };
 

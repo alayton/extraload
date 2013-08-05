@@ -1,7 +1,7 @@
 {
-    "author": "Alayton Norgard <an.adept@gmail.com> (http://debuggable.com/)",
+    "author": "Alayton Norgard <an.adept@gmail.com> (https://github.com/alayton)",
     "name": "extraload",
-    "description": "A node.js driver for mysql. It is written in JavaScript, does not require compiling, and is 100% MIT licensed.",
+    "description": "An ETL framework for node.js.",
     "version": "0.1.0",
     "repository": {
         "type": "git",
@@ -12,7 +12,11 @@
         "framework",
         "api"
     ],
-    "main": "./index",
+    "main": "./index.js",
+    "directories": {
+        "doc": "./docs",
+        "lib": "./lib"
+    },
     "engines": {
         "node": ">=0.10"
     },
