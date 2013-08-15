@@ -136,7 +136,7 @@ A new [xml-stream](./xml-stream.md) instance
 
 #### Example
 ```javascript
-extraload.xmlStream({ file: 'data/example.xml' })
+extraload.xmlStream({ file: 'data/example.xml', target: 'node' })
     .on('data', function(node) {
         console.log(node.name + '[id=' + node.getAttribute('id') + '] contains a name node with the text "' + node.getNodeText('name') + '"');
     })

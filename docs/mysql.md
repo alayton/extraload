@@ -6,8 +6,7 @@ For more complete documentation of wrapper methods, see [mysql on GitHub](https:
 
 ## Requirements
 
-The [mysql](https://npmjs.org/package/mysql) NPM module must be installed.
-`npm install mysql`
+ - [mysql](https://npmjs.org/package/mysql) (`npm install mysql`)
 
 ## Usage
 
@@ -43,6 +42,32 @@ Each call to [Extraload.mysql](./../extraload.md#extraloadmysql) returns a new i
 A complete list of connection options can be found [here](https://github.com/felixge/node-mysql#connection-options).
 
 ## Methods
+
+### mysql Constructor
+Creates a new instance ready to accept queries.
+
+#### Parameters
+ - `opts`: Connection options
+  - `host`: The hostname of the MySQL server (Default: `localhost`)
+  - `port`: The port number of the MySQL server (Default: `3306`)
+  - `user`: The user to connect as
+  - `password`: The password of the `user`
+  - `database`: The default database for the connection
+  - A full list of options can be found [here](https://github.com/felixge/node-mysql#connection-options)
+
+#### Returns
+A new mysql instance
+
+#### Example
+```javascript
+var mysql = Extraload.mysql({
+    host: '10.0.0.1',
+    user: 'foo',
+    password: 'bar',
+    database: 'foobar'
+});
+mysql.query('INSERT INTO foo SET ?', { id: 1, name: 'bar', value: 42 });
+```
 
 ### mysql.query
 Executes a query on the instance's MySQL connection. Wrapper around [mysql.Connection.query](https://github.com/felixge/node-mysql#escaping-query-values).
